@@ -8,10 +8,11 @@ import { useNavigate } from 'react-router-dom'
 
 function Header() {
 
+  // retrieving authStatus from store 
   const authStatus = useSelector((state) => state.auth.status)
   const navigate = useNavigate()
 
-  //Based on actve stattus we shall navigate to the respective directory...
+  //Based on actve status we shall allow navigation to the respective directory...
   const navItems = [
     {
       name: 'Home',
@@ -66,6 +67,7 @@ function Header() {
               )
                 : null )
             }
+            {/* // if authStatus === true then display the logout button */}
             {authStatus && (
               <li className='font-bold font-sans'>
                 <LogoutBtn />

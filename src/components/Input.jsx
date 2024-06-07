@@ -1,12 +1,13 @@
 import React from 'react'
 import { useId } from 'react'
 
-const Input = React.forwardRef( function Input({
+function Input({
   label,
   type="text",
   className="",
   ...props
 }, ref) {
+  // In order to set an unique id ()  for label and input box
   const id = useId()
 
   return (
@@ -27,6 +28,6 @@ const Input = React.forwardRef( function Input({
             />
     </div>
   )
-})
+}
 
-export default Input
+export default React.forwardRef(Input)

@@ -1,6 +1,7 @@
 import React from 'react'
 
-//we shall create a common button component so that we do not have to  create it again and again
+//we shall create a common button component so that we do not have to  create it again and again 
+// and we can then add properties as per need
 
 function Button({
   children,

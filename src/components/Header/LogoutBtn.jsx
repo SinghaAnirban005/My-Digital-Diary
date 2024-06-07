@@ -7,6 +7,7 @@ function LogoutBtn() {
 
   const dispatch = useDispatch()
 
+  // Perform logout operation then send logout status to redux store to keep updated
   const logoutHandler= () => {
     authService.logout().then( () => {
         dispatch(logout())

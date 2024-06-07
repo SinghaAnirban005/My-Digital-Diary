@@ -14,7 +14,6 @@ export class AuthService {
   }
 
   // Handling account creation . Once created it will pass to login
-
   async createAccount ({email, password, name}) {
     try {
       const userAccount = await this.account.create(ID.unique(), email, password, name);
@@ -43,26 +42,15 @@ export class AuthService {
     }
   }
 
-  //Function to retrieve the data of the current user
-  // async getCurrentUser() {
-  //   try {
-  //     return await this.account.get()
-  //   } 
-  //   catch (error) {
-  //     console.log("APPWRITE ERROR: ", error);
-  //   }
-
-  //   return null
-  // }
-
+  // Fetching info of user 
   async getCurrentUser() {
     try {
       const user = await this.account.get();
       console.log('User:', user); // Debugging user retrieval
       return user;
     } catch (error) {
-      console.log('Appwrite service :: getCurrentUser :: error', error);
-      throw error; // Rethrow error for better error handling
+      console.log('Error Fetching User: ', error);
+      throw error;
     }
   }
   
@@ -73,7 +61,7 @@ export class AuthService {
       await this.account.deleteSessions()
     
     } catch (error) {
-      console.log("Appwrite serive :: logout :: error", error);
+      console.log("Logout Error", error);
     }
   }
 

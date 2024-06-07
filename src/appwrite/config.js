@@ -1,5 +1,5 @@
 import conf from "../conf/conf"; 
-import { Client, ID, Databases, Storage, Query, ImageFormat } from "appwrite"
+import { Client, ID, Databases, Storage, Query } from "appwrite"
 
 export class Service {
   client = new Client();
@@ -15,6 +15,7 @@ export class Service {
     this.bucket = new Storage(this.client);
   }
 
+  // To create post
   async createPost({ title, slug, content, featuredImage, status, userId }) {
     try {
       const response = await this.databases.createDocument(
@@ -33,7 +34,6 @@ export class Service {
       return response;
     } catch (error) {
       console.log("Appwrite service :: createPost :: error", error);
-      // Rethrow the error to propagate it to the caller
       throw error;
     }
   }
@@ -55,7 +55,7 @@ export class Service {
             }
         )
     } catch (error) {
-        console.log("Appwrite serive :: updatePost :: error", error);
+        console.log("Error in updating post", error);
     }
 }
 
@@ -70,7 +70,7 @@ async deletePost(slug){
       )
       return true
   } catch (error) {
-      console.log("Appwrite serive :: deletePost :: error", error);
+      console.log("Error in deleting post: ", error);
       return false
   }
 }
@@ -85,7 +85,7 @@ async getPost(slug){
       
       )
   } catch (error) {
-      console.log("Appwrite serive :: getPost :: error", error);
+      console.log("Error in getting post: ", error);
       return false
   }
 }
@@ -100,12 +100,14 @@ async getPosts(queries = [Query.equal("status", "active")]){
   
       ) 
   } catch (error) {
-      console.log("Appwrite serive :: getPosts :: error", error);
+      console.log("Error in getting posts", error);
       return false
   }
 }
 
 // File Services...
+
+// To upload file
 async uploadFile(file){
   try {
       return await this.bucket.createFile(
@@ -114,11 +116,12 @@ async uploadFile(file){
           file
       )
   } catch (error) {
-      console.log("Appwrite serive :: uploadFile :: error", error);
+      console.log("Error in uploading file", error);
       return false
   }
 }
 
+// To delete file
 async deleteFile(fileId){
   try {
       await this.bucket.deleteFile(
@@ -128,12 +131,12 @@ async deleteFile(fileId){
       return true
       
   } catch (error) {
-      console.log("Appwrite serive :: deleteFile :: error", error);
+      console.log("Error in deleting file", error);
       return false
   }
 }
 
-
+// to get view of image in post-card component
 getFilePreview(fileId){
  
     const result = this.bucket.getFilePreview(
