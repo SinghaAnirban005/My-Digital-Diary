@@ -15,25 +15,6 @@ export class Service {
     this.bucket = new Storage(this.client);
   }
 
-  // In order to create Post we pass our attributes
-  // async createPost({title, slug, content, featuredImage, status, userId}) {
-  //   try {
-  //     conf.appwriteDatabaseId,
-  //     conf.appwriteCollectionId,
-  //     slug, 
-  //     {
-  //       title, 
-  //       content,
-  //       featuredImage,
-  //       status,
-  //       userId
-  //     }
-      
-  //   } catch (error) {
-  //     console.log("Appwrite serive :: createPost :: error", error);
-  //   }
-  // }
-
   async createPost({ title, slug, content, featuredImage, status, userId }) {
     try {
       const response = await this.databases.createDocument(
@@ -154,20 +135,14 @@ async deleteFile(fileId){
 
 
 getFilePreview(fileId){
- // try {
+ 
     const result = this.bucket.getFilePreview(
       conf.appwriteBucketId,
       fileId
-      // ImageFormat.Jpeg
     );
 
     return result;
 
-  // } catch (error) {
-
-  //   console.error("Error getting file preview:", error);
-  
-  // }
 }
 
  

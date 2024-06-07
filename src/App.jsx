@@ -6,7 +6,6 @@ import './App.css'
 import { login, logout } from './store/authSlice'
 import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer.jsx'
-// import { Outlet } from 'react-router-dom'
 
 function App() {
 

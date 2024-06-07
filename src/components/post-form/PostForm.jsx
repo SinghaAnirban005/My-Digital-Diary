@@ -39,24 +39,7 @@ function PostForm({post}) {
         navigate(`/post/${dbPost.$id}`)
       }
     }
-    // else {
-    //   const file = await service.uploadFile(data.image[0])
-
-    //   if(file) {
-    //     const fileId = file.$id
-    //     data.featuredImage = fileId
-      
-    //     const dbPost = await service.createPost({...data, userId: userData.$id})
-
-    //     if(dbPost) {
-    //       navigate(`/post/${dbPost.$id}`)
-          
-    //       console.log("POST CREATED");
-    //     }else{
-    //       console.log("failed to create post");
-    //     }
-        
-    //   }
+ 
     else {
       let file;
       try {
