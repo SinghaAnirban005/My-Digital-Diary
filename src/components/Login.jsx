@@ -54,7 +54,7 @@ function Login() {
         {/* If error exists then display it ... */}
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-        // Using React hook form 
+         {/* Using React hook form  */}
 
         <form onSubmit={handleSubmit(login)} className="mt-8">
         <div className='space-y-5'>
