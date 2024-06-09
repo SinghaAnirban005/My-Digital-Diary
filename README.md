@@ -48,17 +48,17 @@ Make sure you have the following installed on your system:
    cd My-Digital-Diary
 
 4. **Install Dependencies**
-   If you are using npm:
+-   If you are using npm :-
    npm install
 
-   If you are using yarn 
+   If you are using yarn :- 
    yarn install
 
 5. **Start the development server**
-   If you are using yarn 
+-   If you are using yarn :- 
    yarn dev
 
-   If you are using npm
+-   If you are using npm :-
    npm run dev
 
 The application will be available at http://localhost:3000.
