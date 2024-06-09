@@ -61,14 +61,18 @@ Make sure you have the following installed on your system:
 -   If you are using npm :-
    npm run dev
 
+## Live Demo
+- You can see a live demo of the application :- my-digital-diary.vercel.app.
+
+
 The application will be available at http://localhost:3000.
 
 ## Contributing
 If you want to contribute to this project, please follow these steps:
 
-Fork the repository
-Create a new branch (git checkout -b feature/YourFeature)
-Make your changes
-Commit your changes (git commit -m 'Add some feature')
-Push to the branch (git push origin feature/YourFeature)
-Open a pull request
+- Fork the repository
+- Create a new branch (git checkout -b feature/YourFeature)
+- Make your changes
+- Commit your changes (git commit -m 'Add some feature')
+- Push to the branch (git push origin feature/YourFeature)
+- Open a pull request
