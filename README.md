@@ -51,7 +51,7 @@ Make sure you have the following installed on your system:
 -   If you are using npm :-
    npm install
 
-   If you are using yarn :- 
+-   If you are using yarn :- 
    yarn install
 
 5. **Start the development server**
