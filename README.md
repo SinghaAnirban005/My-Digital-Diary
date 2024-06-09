@@ -62,7 +62,7 @@ Make sure you have the following installed on your system:
    npm run dev
 
 ## Live Demo
-- You can see a live demo of the application :- [here]( my-digital-diary.vercel.app.).
+- You can see a live demo of the application [here](https://my-digital-diary-59aexe01h-anirban-singhas-projects.vercel.app/)
 
 
 The application will be available at http://localhost:3000.
