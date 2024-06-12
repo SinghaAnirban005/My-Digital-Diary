@@ -61,11 +61,12 @@ Make sure you have the following installed on your system:
 -   If you are using npm :-
    npm run dev
 
+-  The application will be available at http://localhost:3000.
+
 ## Live Demo
-- You can see a live demo of the application [here](https://my-digital-diary-59aexe01h-anirban-singhas-projects.vercel.app/)
+- You can see a live demo of the application [here](https://my-digital-diary.vercel.app)
 
 
-The application will be available at http://localhost:3000.
 
 ## Contributing
 If you want to contribute to this project, please follow these steps:
