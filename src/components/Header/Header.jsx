@@ -47,10 +47,10 @@ function Header() {
       <Container>
         <nav className='flex items-center'>
         <div className='mr-4'>
-            <Link to='/'>
+            {/* <Link to='#'> */}
               <Logo width='70px' />
 
-              </Link>
+              {/* </Link> */}
           </div>
 
           <ul className='flex ml-auto'>

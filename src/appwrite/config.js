@@ -15,8 +15,9 @@ export class Service {
     this.bucket = new Storage(this.client);
   }
 
-  // To create post
+  // To create post 
   async createPost({ title, slug, content, featuredImage, status, userId }) {
+    
     try {
       const response = await this.databases.createDocument(
         conf.appwriteDatabaseId,
@@ -36,11 +37,13 @@ export class Service {
       console.log("Appwrite service :: createPost :: error", error);
       throw error;
     }
+
   }
   
 
   //Updating the post
   async updatePost(slug, {title, content, featuredImage, status}){
+    
     try {
         return await this.databases.updateDocument(
             conf.appwriteDatabaseId,
@@ -68,11 +71,14 @@ async deletePost(slug){
           slug
       
       )
+
       return true
+
   } catch (error) {
       console.log("Error in deleting post: ", error);
       return false
   }
+
 }
 
 // To retrieve post 
@@ -123,6 +129,7 @@ async uploadFile(file){
 
 // To delete file
 async deleteFile(fileId){
+
   try {
       await this.bucket.deleteFile(
           conf.appwriteBucketId,
@@ -134,6 +141,7 @@ async deleteFile(fileId){
       console.log("Error in deleting file", error);
       return false
   }
+
 }
 
 // to get view of image in post-card component
