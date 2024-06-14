@@ -15,7 +15,7 @@ export class Service {
     this.bucket = new Storage(this.client);
   }
 
-  // To create post 
+  // Method To create post 
   async createPost({ title, slug, content, featuredImage, status, userId }) {
     
     try {
@@ -41,7 +41,7 @@ export class Service {
   }
   
 
-  //Updating the post
+  //Method for Updating the post
   async updatePost(slug, {title, content, featuredImage, status}){
     
     try {
@@ -62,7 +62,7 @@ export class Service {
     }
 }
 
-// Deleting the post
+// Method for Deleting the post
 async deletePost(slug){
   try {
       await this.databases.deleteDocument(
@@ -81,7 +81,7 @@ async deletePost(slug){
 
 }
 
-// To retrieve post 
+// To retrieve a particular post
 async getPost(slug){
   try {
       return await this.databases.getDocument(
@@ -96,7 +96,7 @@ async getPost(slug){
   }
 }
 
-//To get all posts based on the status as active or not
+//To get all posts based on query
 async getPosts(queries = [Query.equal("status", "active")]){
   try {
       return await this.databases.listDocuments(
@@ -144,7 +144,7 @@ async deleteFile(fileId){
 
 }
 
-// to get view of image in post-card component
+// Method to get preview of uploaded file
 getFilePreview(fileId){
  
     const result = this.bucket.getFilePreview(

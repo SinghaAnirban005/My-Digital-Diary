@@ -15,7 +15,7 @@ function Login() {
   const {register, handleSubmit} = useForm()
   const [error, setError] = useState("")
 
-
+  // Algorithm of login ...
   const login = async(data) => {
     setError("")
     try {
@@ -35,7 +35,7 @@ function Login() {
   return(
     <div
     className='flex items-center justify-center w-full bg-blue-600 py-6'>
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+        <div className={"mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10"}>
         <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
@@ -51,11 +51,10 @@ function Login() {
                         Sign Up
                     </Link>
         </p>
-        {/* If error exists then display it ... */}
+        {/* Display any errors if it exists */}
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-         {/* Using React hook form  */}
-
+        {/* Using React hook form  */}
         <form onSubmit={handleSubmit(login)} className="mt-8">
         <div className='space-y-5'>
                 <Input
@@ -65,7 +64,7 @@ function Login() {
                 {...register("email", {
                     required: true,
                     validate: {
-                      // Genrated match pattern from online sources...
+                      // Generated match pattern from online sources...
                         matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                         "Email address must be a valid address",
                     }

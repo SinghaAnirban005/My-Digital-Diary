@@ -72,9 +72,6 @@ function PostForm({post}) {
       }
     }
     
-
-    
-
   };
 
 
@@ -91,7 +88,6 @@ function PostForm({post}) {
   }, [])
 
 
-// Interview Question ...
   React.useEffect(() => {
     const subscription = watch((value, { name }) => {
         if (name === "title") {
@@ -125,6 +121,7 @@ function PostForm({post}) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
+                
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
             </div>
 

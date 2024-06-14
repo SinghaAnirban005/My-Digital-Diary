@@ -16,6 +16,7 @@ export const SignUp = () => {
   const dispatch = useDispatch()
   const { register, handleSubmit } = useForm()
 
+  // Algorithm to create an account ... 
   const create = async(data) => {
     setError("")
     try {

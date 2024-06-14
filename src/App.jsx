@@ -13,6 +13,7 @@ function App() {
 
   const dispatch = useDispatch()
 
+  // To make sure that we do not have to re enter our login credentials on refreshing the page
   useEffect(() => {
     authService.getCurrentUser()
     .then((userData) => {
@@ -27,7 +28,8 @@ function App() {
     .finally(() => setLoading(false))
   }, [])
 
-  //We shall conditionally render .. 
+  //We shall conditionally render based on laoding status.. 
+
   return !loading ? (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
     <div className='w-full block'>

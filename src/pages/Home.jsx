@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 function Home() {
 
   const [posts, setPosts] = useState([])
-
+  // Method to retreive all posts and hold it in posts array...
   useEffect(() => {
     service.getPosts().then((posts) => {
       if(posts) {
@@ -30,7 +30,7 @@ if (posts.length === 0) {
                     <div className="p-2 w-full">
                     
                         <h1 className="text-2xl font-bold hover:text-gray-200 py-32">
-                            Login to read posts
+                           Create Posts to View here
                         </h1>
                     </div>
                    

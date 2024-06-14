@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function Post() {
     const [post, setPost] = useState(null);
+    // useParams() allows you to access the parameters of the current route.
     const { slug } = useParams();
     const navigate = useNavigate();
   
@@ -15,6 +16,7 @@ export default function Post() {
 
     const isAuthor = post && userData ? post.userId === userData.$id : false;
 
+    // Retreives the post from database by the slug provided and sets in post ... 
     useEffect(() => {
         if (slug) {
             service.getPost(slug).then((post) => {
@@ -25,6 +27,7 @@ export default function Post() {
         else navigate("/");
     }, [slug, navigate]);
 
+    // Method to delete post and remove image associated wth it ... 
     const deletePost = () => {
         service.deletePost(post.$id).then((status) => {
             if (status) {

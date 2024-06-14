@@ -13,7 +13,7 @@ export class AuthService {
     this.account = new Account(this.client)
   }
 
-  // Handling account creation . Once created it will pass to login
+  // Method to Create Account...
   async createAccount ({email, password, name}) {
     try {
       const userAccount = await this.account.create(ID.unique(), email, password, name);
@@ -31,8 +31,7 @@ export class AuthService {
     }
   }
 
-  //Handling Login of user
-
+  // Method for Handling Login of user
   async login({email, password}) {
     try {
       return await this.account.createEmailPasswordSession(email, password)
