@@ -77,3 +77,6 @@ If you want to contribute to this project, please follow these steps:
 - Commit your changes (git commit -m 'Add some feature')
 - Push to the branch (git push origin feature/YourFeature)
 - Open a pull request
+
+## Snapshots
+![Product](./src/image/photo-collage.png.png)
