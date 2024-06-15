@@ -23,7 +23,7 @@ function Home() {
 if (posts.length === 0 || !active) {
     return (
         <div className="w-full py-8 text-center bg-blue-600">
-          {/* <Header /> */}
+         
             <Container> 
             
                 <div className="flex flex-wrap pt-10"> 
@@ -38,7 +38,7 @@ if (posts.length === 0 || !active) {
                 </div>
                
             </Container>
-            {/* <Footer /> */}
+           
         </div>
     )
 }
