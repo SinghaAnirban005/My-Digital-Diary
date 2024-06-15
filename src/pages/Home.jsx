@@ -31,7 +31,7 @@ if (posts.length === 0 || !active) {
                     <div className="p-2 w-full">
                     
                         <h1 className="text-2xl font-bold hover:text-gray-200 py-32">
-                           Create Posts to View here
+                           {!active ? <p>Login To View Posts</p> : <p>Create Posts to view here</p>}
                         </h1>
                     </div>
                    
