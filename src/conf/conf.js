@@ -1,9 +1,9 @@
 const conf = {
-  appwriteUrl: String(import.meta.env.VITE_APPWRITE_URL),
-  appwriteProjectId: String(import.meta.env.VITE_APPWRITE_PROJECT_ID),
-  appwriteDatabaseId: String(import.meta.env.VITE_APPWRITE_DATABASE_ID),
-  appwriteCollectionId: String(import.meta.env.VITE_APPWRITE_COLLECTION_ID),
-  appwriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID)
+  appwriteUrl: String("https://cloud.appwrite.io/v1"),
+  appwriteProjectId: String("666085ea00300a510fab"),
+  appwriteDatabaseId: String("6660a33d0034f26271f2"),
+  appwriteCollectionId: String("6660a34a0000453133e7"),
+  appwriteBucketId: String("6660a278001c2adc7e3b")
 }
 
 export default conf

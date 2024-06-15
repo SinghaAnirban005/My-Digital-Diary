@@ -5,8 +5,9 @@ import Input from "../Input";
 import RTE from "../RTE";
 import Select from "../Select";
 import service from "../../appwrite/config";
+import authService from "../../appwrite/auth.js";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+
 
 function PostForm({post}) {
 
@@ -20,8 +21,8 @@ function PostForm({post}) {
 });
 
   const navigate = useNavigate()
-  const userData = useSelector((state) => state.auth.userData)
-  
+
+
   const submit = async (data) => {
     if (post) {
       const file = data.image[0] ? await service.uploadFile(data.image[0]) : null;
@@ -42,6 +43,8 @@ function PostForm({post}) {
  
     else {
       let file;
+      const userData = await authService.getCurrentUser()
+      
       try {
         file = await service.uploadFile(data.image[0]);
       } catch (uploadError) {
@@ -49,6 +52,7 @@ function PostForm({post}) {
       }
 
       if (file) {
+       
         const fileId = file.$id;
         const newData = {
           ...data,
@@ -58,6 +62,7 @@ function PostForm({post}) {
 
         let dbPost;
         try {
+          console.log(userData);
           dbPost = await service.createPost(newData);
         } catch (createError) {
           console.error("Error creating the post:", createError);

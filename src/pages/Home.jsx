@@ -3,8 +3,7 @@ import Container from '../components/container/Container'
 import PostCard from '../components/PostCard'
 import service from '../appwrite/config'
 import { useEffect, useState } from 'react'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer'
+import { useSelector } from 'react-redux'
 
 function Home() {
 
@@ -18,8 +17,10 @@ function Home() {
 })
   }, [])
 
-  //Handling scene when there are no posts
-if (posts.length === 0) {
+  const active = useSelector((state) => state.auth.status)
+
+  //Handling scene when there are no posts or user is logged out ... 
+if (posts.length === 0 || !active) {
     return (
         <div className="w-full py-8 text-center bg-blue-600">
           {/* <Header /> */}
