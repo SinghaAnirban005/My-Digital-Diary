@@ -25,6 +25,7 @@ function EditPost() {
     }
   }, [slug, navigate])
 
+  // If post exists then we display postform component 
   return post ? <div className='py-8 bg-blue-600'>
   <Container>
       <PostForm post={post} />
