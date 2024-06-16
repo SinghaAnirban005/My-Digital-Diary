@@ -56,10 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/add-post",
             element: (
-                <AuthLayout authentication>
-                    {" "}
+                // <AuthLayout authentication>
+                    // {" "}
                     <AddPost />
-                </AuthLayout>
+                // </AuthLayout>
             ),
       },
 
