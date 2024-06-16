@@ -36,7 +36,7 @@ export const SignUp = () => {
   }
 
   return (
-   <div className='py-8 bg-blue-600'>
+   <div className='py-8 bg-black'>
      <div className="flex items-center justify-center">
        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
             <div className="mb-2 flex justify-center">

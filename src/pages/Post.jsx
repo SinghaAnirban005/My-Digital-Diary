@@ -4,20 +4,18 @@ import service from "../appwrite/config";
 import Button from "../components/Button";
 import Container from "../components/container/Container";
 import parse from "html-react-parser";
-import { useSelector } from "react-redux";
-import authService from "../appwrite/auth.js";
+
 
 export default function Post() {
     const [post, setPost] = useState(null);
     // useParams() allows you to access the parameters of the current route.
     const { slug } = useParams();
     const navigate = useNavigate();
-  
-    const userData = useSelector((state) => state.auth.userData);
 
-    const isAuthor = post && userData ? post.userId === userData.$id : false;
 
-    // Retreives the post from database by the slug provided and sets in post ... 
+    // Need to improve checking ...
+    const isAuthor = post ? true : false;
+
     useEffect(() => {
         if (slug) {
             service.getPost(slug).then((post) => {
@@ -32,7 +30,7 @@ export default function Post() {
     const deletePost = () => {
         service.deletePost(post.$id).then((status) => {
             if (status) {
-                console.log(userData);
+                
                 service.deleteFile(post.featuredImage);
                 navigate("/");
 

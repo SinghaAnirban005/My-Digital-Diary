@@ -7,8 +7,8 @@ import service from '../appwrite/config'
 function AllPosts() {
 
   const [posts, setPosts] = useState([])
-  // useEffect(() => {}, [])
 
+  // Method to retreive posts from database and hold it in "posts" array
   service.getPosts([]).then((posts) => {
     if(posts) {
       setPosts(posts.documents)
@@ -16,7 +16,7 @@ function AllPosts() {
   })
 
   return (
-    <div className='w-full py-8 bg-blue-600'>
+    <div className='w-full py-8 bg-black'>
       <Container>
         <div className='flex flex-wrap '>
           {posts.map((post) => (

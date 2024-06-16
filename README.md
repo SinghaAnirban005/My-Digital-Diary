@@ -84,7 +84,7 @@ If you want to contribute to this project, please follow these steps:
 # Future Improvements for Digital Diary Project
 
 ## Enhanced User Interface
-- **Dark Mode**: Implementing a dark mode to make the interface more user-friendly, especially in low-light environments.
+- **Dark Mode and Light Mode**: Implementing both modes to make the interface more user-friendly, in desirable environments.
 
 ## Social and Collaborative Features
 - **Sharing Options**: Allow users to share specific posts or their entire diary with friends or on social media.

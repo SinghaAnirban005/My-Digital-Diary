@@ -4,7 +4,8 @@ import Container from '../components/container/Container'
 
 function AddPost() {
   return (
-    <div className='py-8 bg-blue-600'>
+    
+    <div className='-mt-6 py-8 bg-black'>
       <Container>
         <PostForm />
       </Container>

@@ -22,7 +22,7 @@ function Home() {
   //Handling scene when there are no posts or user is logged out ... 
 if (posts.length === 0 || !active) {
     return (
-        <div className="w-full py-8 text-center bg-blue-600">
+        <div className="w-full py-8 text-center bg-black">
          
             <Container> 
             
@@ -30,7 +30,7 @@ if (posts.length === 0 || !active) {
              
                     <div className="p-2 w-full">
                     
-                        <h1 className="text-2xl font-bold hover:text-gray-200 py-32">
+                        <h1 className="text-2xl font-bold text-white py-32">
                            {!active ? <p>Login To View Posts</p> : <p>Create Posts to view here</p>}
                         </h1>
                     </div>
@@ -44,7 +44,7 @@ if (posts.length === 0 || !active) {
 }
 
   return (
-    <div className='w-full py-8 bg-blue-600'>
+    <div className='w-full py-8 bg-black'>
        <Container>
                 <div className='flex flex-wrap'>
                     {posts.map((post) => (
