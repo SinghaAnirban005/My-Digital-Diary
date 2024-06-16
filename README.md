@@ -80,3 +80,24 @@ If you want to contribute to this project, please follow these steps:
 
 ## Snapshots
 ![Product](./src/image/photo-collage.png.png)
+
+# Future Improvements for Digital Diary Project
+
+## Enhanced User Interface
+- **Dark Mode**: Implementing a dark mode to make the interface more user-friendly, especially in low-light environments.
+
+## Social and Collaborative Features
+- **Sharing Options**: Allow users to share specific posts or their entire diary with friends or on social media.
+
+## Mobile 
+- **Mobile App**: Develop a mobile application for iOS and Android to provide users with the ability to manage their diaries on the go.
+
+## Analysis
+- **Usage Analytics**: Provide users with insights into their writing habits, such as the number of posts per month or popular topics.
+
+## Language
+- **Multilingual Support**: Offer support for multiple languages to cater to a wider audience.
+
+## User Feedback
+- **Feedback System**: Create a system for users to provide feedback and suggest new features.
+
