@@ -63,6 +63,9 @@ Make sure you have the following installed on your system:
 
 -  The application will be available at http://localhost:3000.
 
+- Preffered Browser :- 
+  Mozilla Firefox
+
 ## Live Demo
 - You can see a live demo of the application [here](https://my-digital-diary.vercel.app)
 
