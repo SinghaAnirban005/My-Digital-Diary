@@ -1,4 +1,4 @@
-import conf from "../conf/conf"; 
+import conf from "../conf/conf.js"; 
 import { Client, ID, Databases, Storage, Query } from "appwrite"
 
 export class Service {
@@ -97,8 +97,10 @@ async getPost(slug){
 }
 
 //To get all posts based on query
-async getPosts(queries = [Query.equal("status", "active")]){
+async getPosts(id){
   try {
+    const queries = [Query.equal("userId", id)]
+
       return await this.databases.listDocuments(
           conf.appwriteDatabaseId,
           conf.appwriteCollectionId,

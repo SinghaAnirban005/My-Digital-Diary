@@ -1,20 +1,27 @@
 import React from 'react'
 import Container from '../components/container/Container'
 import PostCard from '../components/PostCard'
-import service from '../appwrite/config'
+import service from '../appwrite/config.js'
+import authService from '../appwrite/auth.js'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 function Home() {
 
   const [posts, setPosts] = useState([])
+
   // Method to retreive all posts and hold it in posts array...
   useEffect(() => {
-    service.getPosts().then((posts) => {
-      if(posts) {
-        setPosts(posts.documents)
-      }
-})
+      ;(async() => {
+        const userId = await authService.getCurrentUser()
+        const uid = userId.$id
+
+        await service.getPosts(uid).then((posts) => {
+          if(posts) {
+            setPosts(posts.documents)
+          }
+        })
+      })()
   }, [])
 
   const active = useSelector((state) => state.auth.status)
